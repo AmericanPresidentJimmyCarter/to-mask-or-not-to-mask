@@ -20,7 +20,7 @@ That's interesting and all. Flux doesn't have attention masking, so maybe while 
 
 Here's the results, attempting to train in the character [Loona](https://hazbinhotel.fandom.com/wiki/Loona) from [Helluva Boss](https://www.youtube.com/playlist?list=PL-uopgYBi65HwiiDR9Y23lomAkGr9mm-S) via LoRA for 3000 steps at batch size 4. The validation prompt here shown on the bottom is "loona from helluva boss is eating a donut". At the top is a blank prompt, which can help us see how much we're wrecking the mode.
 
-<video>
+https://github.com/user-attachments/assets/6472a304-1b5b-4f44-a21f-12a022f722dc
 
 How to interpret these results? Text-to-image finetuning via LoRA for a single character is not quite like other tasks with easy benchmarks to assess the quality of your results. You have to just see which result looks the best to you and run with it. It's pretty clear that the zeroed version seems to learn the style of Helluva Boss faster than the other two, and my hypothesis is that it's simply because using zeroes is so out of distribution with what the model originally learned that it acts as some kind of "special vectors" that indicate that this content is totally unrelated to previous content the model has learned.
 
@@ -90,6 +90,8 @@ Not really, here they are with 0.5 strength and they lose a lot of details of th
 
 I did, here's the video. There doesn't seem to be a huge improvement in any individual checkpoint from the ones I sampled.
 
+https://github.com/user-attachments/assets/f5c3ecbb-dba0-4ae1-b5d5-4d0e2ee98e28
+
 ## Conclusion
 
 I am more or less on the fence about masking here, I think if you were to do a large scale finetune on lots of images it might be more useful. The zero-padded LoRA _may_ have trained more quicker and with the adjusted inference seemed to converge around step 2,000 while the others did so later. But, it also seemed to leak more and do some weird things to unrelated prompts. Both zero-padded and masked appear to converge more quickly than the regular, unmasked training. You can use them, or not, either way will probably not hurt your training but then the onus is on the end user to use the correct form of inference. I have no idea what the support for those (zero-padded and actual masking) is in various clients.
@@ -98,6 +100,6 @@ I am more or less on the fence about masking here, I think if you were to do a l
 
 No animals were hurt during the course of this training.
 
-- (No masking)[https://huggingface.co/jimmycarter/flux-training-losercity-next-tests-no-mask]
-- (Zero-padded)[https://huggingface.co/jimmycarter/flux-training-losercity-next-tests-zeroed]
-- (Masked)[https://huggingface.co/jimmycarter/flux-training-losercity-next-tests-masked]
+- [No masking](https://huggingface.co/jimmycarter/flux-training-losercity-next-tests-no-mask)
+- [Zero-padded](https://huggingface.co/jimmycarter/flux-training-losercity-next-tests-zeroed)
+- [Masked](https://huggingface.co/jimmycarter/flux-training-losercity-next-tests-masked)
