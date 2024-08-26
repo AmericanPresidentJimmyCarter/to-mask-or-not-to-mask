@@ -1,5 +1,6 @@
 # To Mask or not to Mask
 ## Low-rank finetuning of Flux-dev with some masking schemes
+### Jimmy Carter
 
 There has been some discussion and implementations of various masking schemes for the [Flux series of models](https://huggingface.co/black-forest-labs/). Normally when you train a text-to-image model using a T5 encoder as the text conditioning model, you mask the portions of the text encoder that you don't want the model to learn anything from. Masking is a way to make your attention layers ignore certain tokens that you know are garbage, such as repeating (empty) tokens. This has a nice side effect of letting you run whatever length text-embedding, since the attention layer only focuses on the portion of it you tell it to focus on. This was true for [DeepFloyd IF](https://huggingface.co/DeepFloyd) and the [Pixart family of models](https://huggingface.co/PixArt-alpha).
 
