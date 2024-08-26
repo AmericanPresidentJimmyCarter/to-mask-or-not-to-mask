@@ -28,7 +28,7 @@ Masked looks similar to, but slightly more dramatic than, the normal mask-free t
 
 In terms of loss all training types appeared similar (forgive the two restarts, wandb doesn't currently let you connect runs on start-stop):
 
-!(wandb.ai loss chart)[wandb_loss.png]
+![wandb.ai loss chart](images/wandb_loss.png)
 
 Okay, let's try some more of my standard prompts, which normally get decent results when I train this LoRA.
 
