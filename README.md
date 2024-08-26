@@ -75,7 +75,7 @@ prompts = [
 ]
 ```
 
-!(Unrelated prompts)[comparison_unrelated.jpg]
+![Unrelated prompts](images/comparison_unrelated.jpg)
 
 The zero-padding trained LoRA seems to have the most bleed from the training dataset, with the cat getting eyes coloured like in the show. The background is gone from the elephant image, with tiny people being replaced with grass and weird floating orbs. In the masked training, the businessman's face seems to have disappeared and the elephant looks a bit off.
 
